@@ -1,27 +1,27 @@
 "use client";
 import { useUser } from "@/context/UserContext";
 import Link from "next/link";
-import { useLanguage } from "@/context/LanguageContext";
+import { useState } from "react";
 
 const navLinks = [
-  { href: "/", key: "home" },
-  { href: "/courses", key: "courses" },
-  { href: "/dashboard", key: "dashboard" },
-  { href: "/scholarships", key: "scholarships" },
-  { href: "/toolkit", key: "toolkit" },
-  { href: "/mentorship", key: "mentorship" },
+  { href: "/", label: "Home" },
+  { href: "/courses", label: "Courses" },
+  { href: "/dashboard", label: "Dashboard" },
+  { href: "/scholarships", label: "Scholarships" },
+  { href: "/toolkit", label: "Toolkit" },
+  { href: "/mentorship", label: "Mentorship" },
 ];
 
 const languages = [
   { code: "en", label: "English" },
   { code: "fr", label: "Français" },
   { code: "rw", label: "Kinyarwanda" },
-  { code: "sw", label: "Kiswahili" },
+  { code: "sw", label: "Kiswahili" }, // Swahili added
 ];
 
 export default function Header() {
   const { user, profile, loading } = useUser();
-  const { lang, setLang, t } = useLanguage();
+  const [lang, setLang] = useState("en");
   async function handleLogout() {
     await import("@/lib/supabaseClient").then(({ supabase }) => supabase.auth.signOut());
     window.location.href = "/";
@@ -34,7 +34,7 @@ export default function Header() {
           <nav className="header-nav">
             {navLinks.map(link => (
               <Link key={link.href} href={link.href} className="header-nav-link">
-                {t(link.key)}
+                {link.label}
               </Link>
             ))}
           </nav>
@@ -53,12 +53,12 @@ export default function Header() {
           {loading ? null : user && profile ? (
             <div className="header-user-info">
               <span className="header-user-name">{profile.name} ({["Admin","Student","Mentor","Teacher"][profile.user_type-1]})</span>
-              <button className="btn btn-outline" onClick={handleLogout}>{t("logout")}</button>
+              <button className="btn btn-outline" onClick={handleLogout}>Logout</button>
             </div>
           ) : (
             <div className="header-auth-links">
-              <Link href="/login" className="btn btn-primary">{t("login")}</Link>
-              <Link href="/register" className="btn btn-outline">{t("register")}</Link>
+              <Link href="/login" className="btn btn-primary">Login</Link>
+              <Link href="/register" className="btn btn-outline">Register</Link>
             </div>
           )}
         </div>
