@@ -19,16 +19,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="bg-gray-50 min-h-screen">
+        <header className="w-full bg-white shadow p-4 mb-8">
+          <div className="container mx-auto flex items-center justify-between">
+            <h1 className="text-2xl font-bold text-blue-700">EdBridge Africa</h1>
+            {/* TODO: Add language toggle and user menu here */}
+          </div>
+        </header>
+        <main className="container mx-auto px-4">{children}</main>
       </body>
     </html>
-  );
+  )
 }
