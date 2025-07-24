@@ -200,8 +200,7 @@ export default function Header() {
             alignItems: "center",
             justifyContent: "space-between",
             padding: "1rem 2rem",
-            maxWidth: "1280px",
-            margin: "0 auto",
+            width: "100%", // Make it stretch
             position: "relative",
           }}
         >
