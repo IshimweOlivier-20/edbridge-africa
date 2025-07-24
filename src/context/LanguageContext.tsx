@@ -1,3 +1,4 @@
+"use client";
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 type TranslationKeys =
@@ -40,7 +41,8 @@ const translations: Translations = {
     register: "Register",
     logout: "Logout",
     welcome: "Welcome to EdBridge Africa",
-    subtitle: "Empowering refugee students to access higher education through digital skills, academic support, and application guidance.",
+    subtitle:
+      "Empowering refugee students to access higher education through digital skills, academic support, and application guidance.",
     featuredCourses: "Featured Courses",
     scholarshipHighlights: "Scholarship Highlights",
     viewAllCourses: "View all courses →",
@@ -49,7 +51,8 @@ const translations: Translations = {
     myDashboard: "My Dashboard",
     mentorshipBtn: "Mentorship",
     missionTitle: "Our Mission",
-    missionDesc: "EdBridge Africa is dedicated to bridging the gap for refugee students by providing access to quality education, mentorship, and resources needed to succeed in higher education and beyond.",
+    missionDesc:
+      "EdBridge Africa is dedicated to bridging the gap for refugee students by providing access to quality education, mentorship, and resources needed to succeed in higher education and beyond.",
   },
   fr: {
     home: "Accueil",
@@ -62,7 +65,8 @@ const translations: Translations = {
     register: "S'inscrire",
     logout: "Déconnexion",
     welcome: "Bienvenue à EdBridge Africa",
-    subtitle: "Autonomiser les étudiants réfugiés pour accéder à l'enseignement supérieur grâce aux compétences numériques, au soutien académique et à l'accompagnement des candidatures.",
+    subtitle:
+      "Autonomiser les étudiants réfugiés pour accéder à l'enseignement supérieur grâce aux compétences numériques, au soutien académique et à l'accompagnement des candidatures.",
     featuredCourses: "Cours en vedette",
     scholarshipHighlights: "Bourses en vedette",
     viewAllCourses: "Voir tous les cours →",
@@ -71,7 +75,8 @@ const translations: Translations = {
     myDashboard: "Mon tableau de bord",
     mentorshipBtn: "Mentorat",
     missionTitle: "Notre mission",
-    missionDesc: "EdBridge Africa s'engage à combler le fossé pour les étudiants réfugiés en leur donnant accès à une éducation de qualité, au mentorat et aux ressources nécessaires pour réussir dans l'enseignement supérieur et au-delà.",
+    missionDesc:
+      "EdBridge Africa s'engage à combler le fossé pour les étudiants réfugiés en leur donnant accès à une éducation de qualité, au mentorat et aux ressources nécessaires pour réussir dans l'enseignement supérieur et au-delà.",
   },
   rw: {
     home: "Ahabanza",
@@ -84,7 +89,8 @@ const translations: Translations = {
     register: "Iyandikishe",
     logout: "Sohoka",
     welcome: "Murakaza neza kuri EdBridge Africa",
-    subtitle: "Gufasha abanyeshuri b'impunzi kubona amashuri makuru binyuze mu bumenyi bwa mudasobwa, ubufasha mu myigire, n'ubujyanama mu gusaba.",
+    subtitle:
+      "Gufasha abanyeshuri b'impunzi kubona amashuri makuru binyuze mu bumenyi bwa mudasobwa, ubufasha mu myigire, n'ubujyanama mu gusaba.",
     featuredCourses: "Amasomo yatoranijwe",
     scholarshipHighlights: "Buruse zatoranijwe",
     viewAllCourses: "Reba amasomo yose →",
@@ -93,7 +99,8 @@ const translations: Translations = {
     myDashboard: "Dashboard yanjye",
     mentorshipBtn: "Ubujyanama",
     missionTitle: "Intego yacu",
-    missionDesc: "EdBridge Africa yiyemeje gufasha abanyeshuri b'impunzi kubona uburezi bufite ireme, ubujyanama, n'ibikoresho bikenewe ngo batsinde mu mashuri makuru no hanze yayo.",
+    missionDesc:
+      "EdBridge Africa yiyemeje gufasha abanyeshuri b'impunzi kubona uburezi bufite ireme, ubujyanama, n'ibikoresho bikenewe ngo batsinde mu mashuri makuru no hanze yayo.",
   },
   sw: {
     home: "Nyumbani",
@@ -106,7 +113,8 @@ const translations: Translations = {
     register: "Jisajili",
     logout: "Toka",
     welcome: "Karibu EdBridge Africa",
-    subtitle: "Kuwawezesha wanafunzi wakimbizi kupata elimu ya juu kupitia ujuzi wa kidijitali, msaada wa kitaaluma, na mwongozo wa maombi.",
+    subtitle:
+      "Kuwawezesha wanafunzi wakimbizi kupata elimu ya juu kupitia ujuzi wa kidijitali, msaada wa kitaaluma, na mwongozo wa maombi.",
     featuredCourses: "Kozi Maarufu",
     scholarshipHighlights: "Ufadhili Maarufu",
     viewAllCourses: "Tazama kozi zote →",
@@ -115,7 +123,8 @@ const translations: Translations = {
     myDashboard: "Dashibodi Yangu",
     mentorshipBtn: "Ushauri",
     missionTitle: "Dhamira Yetu",
-    missionDesc: "EdBridge Africa imejitolea kuziba pengo kwa wanafunzi wakimbizi kwa kutoa elimu bora, ushauri, na rasilimali zinazohitajika kufanikiwa katika elimu ya juu na zaidi.",
+    missionDesc:
+      "EdBridge Africa imejitolea kuziba pengo kwa wanafunzi wakimbizi kwa kutoa elimu bora, ushauri, na rasilimali zinazohitajika kufanikiwa katika elimu ya juu na zaidi.",
   },
 };
 
@@ -145,4 +154,4 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
 export function useLanguage() {
   return useContext(LanguageContext);
-} 
+}
