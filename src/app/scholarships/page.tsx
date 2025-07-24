@@ -29,6 +29,7 @@ import {
   Heart,
   Briefcase,
   Zap,
+  Trophy,
 } from "lucide-react";
 
 const scholarships = [
